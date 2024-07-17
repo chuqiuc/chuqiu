@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>活动提交</title>
+  <style>
+    form {
+      width: 500px;
+      padding: 20px;
+      border: 1px solid #4CAF50;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="time"],
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid #4CAF50;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid #4CAF50;
+      border-radius: 3px;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>活动表单</h2>
+  <form action="http://shilianwang.sinaapp.com/api/event/create_event">
+    <label for="user_id">用户 ID（11 位手机号码）：</label>
+    <input type="number" id="user_id" name="user_id" min="10000000000" max="99999999999"><br>
+    <label for="start_time">活动开始时间：</label><br>
+    <input type="time" id="start_time" name="start_time"><br>
+    <label for="end_time">活动结束时间：</label><br>
+    <input type="time" id="end_time" name="end_time"><br>
+    <label for="start_date">活动开始日期：</label><br>
+    <input type="date" id="start_date" name="start_date"><br>
+    <label for="end_date">活动结束日期：</label><br>
+    <input type="date" id="end_date" name="end_date"><br>
+    <label for="location">活动地点：</label><br>
+    <input type="text" id="location" name="location"><br>
+    <label for="title">活动标题：</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="visibility">活动可见性：</label><br>
+    <select id="visibility" name="visibility">
+      <option value="0" style="background-color: #f44336;">私密活动</option>
+      <option value="1" style="background-color: #FFC107;">对好友可见活动</option>
+      <option value="2" style="background-color: #9C27B0;">只能查看不可参与的公开活动</option>
+      <option value="3" style="background-color: #03A9F4;">需申请参与的公开活动</option>
+      <option value="4" style="background-color: #4CAF50;">可自由参与的公开活动</option>
+    </select><br>
+    <label for="transferability">活动可转发性：</label><br>
+    <select id="transferability" name="transferability">
+      <option value="0" style="background-color: #f44336;">不可转发</option>
+      <option value="1" style="background-color: #4CAF50;">可转发</option>
+    </select><br>
+    <input type="submit" value="提交">
+  </form>
+</body>
+
+</html>
